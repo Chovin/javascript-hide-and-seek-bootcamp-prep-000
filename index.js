@@ -24,6 +24,7 @@ function deepestChild() {
     current = next.pop()
   }
 
+  return deepest[0]
 }
 
 function increaseRankBy(n) {
