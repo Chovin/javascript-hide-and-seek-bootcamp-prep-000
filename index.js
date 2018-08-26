@@ -17,11 +17,8 @@ function deepestChild() {
     if (level > deepest[1]) {
       deepest = current
     }
-    console.log(current.children)
-    if (current.children) {
-      for (var i = 0; i < current.children.length; i++) {
-        next.push([current.children[i], level + 1])
-      }
+    for (var i = 0; i < node.children.length; i++) {
+      next.push([node.children[i], level + 1])
     }
 
     current = next.pop()
