@@ -8,13 +8,22 @@ function nestedTarget() {
 
 function deepestChild() {
 
-  return document.querySelector('div#grand-node :empty')
-  // var current = document.querySelector('div#grand-node')
-  // var next = []
-  //
-  // while (current) {
-  //
-  // }
+  var current = [document.querySelector('div#grand-node'), 0]
+  var deepest = current
+  var next = []
+
+  while (current) {
+    [node, level] = current
+    if (level > deepest[1]) {
+      deepest = current
+    }
+    for (var i = 0; i < current.children.length; i++) {
+      next.push([current.children[i], level + 1])
+    }
+
+    current = next.pop()
+  }
+
 }
 
 function increaseRankBy(n) {
