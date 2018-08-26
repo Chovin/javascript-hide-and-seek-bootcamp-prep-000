@@ -13,7 +13,7 @@ function deepestChild() {
   var next = []
 
   while (current) {
-    [node, level] = current
+    var [node, level] = current
     if (level > deepest[1]) {
       deepest = current
     }
